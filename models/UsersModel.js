@@ -1,4 +1,4 @@
-class UserModel {
+class UsersModel {
     static list = [
      { 
         id:1,
@@ -15,12 +15,25 @@ class UserModel {
     ];
 
     static read() {
-        return UserModel.list;
+        return UsersModel.list;
     }
     static getById(id){
+        const register = BolosModel.list.filter(item => item.id === Number(id));
         return data;
-
+    }
+    static create(data) {
+        UsersModel.list.push(data);
 
     }
+    static update(id,data) {
+        const index = UsersModel.list.findIndex(item => item.id === Number(id) );
+        UsersModel.list[index] = data;
+    }
+    static delete(id) {
+        const data = UsersModel.list.findIndex( item => item.id === Number(id));
+        UsersModel.list = data;
+    }
+
 
 }
+module.exports = UsersModel;

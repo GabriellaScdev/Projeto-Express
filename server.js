@@ -10,7 +10,7 @@
 //   console.log(`Example app listening on port ${port}`)
 // })
  const express = require ('express');
-
+ const BolosRoute = require ('./routes/BolosRoute')
  const app = express();
  const HOST = '127.0.0.1';
  const PORT = 3000;
@@ -19,6 +19,7 @@
     res.send('Hello world!');
 
 })
+app.use(BolosRoute)
 app.listen(PORT, HOST, () => {
     console.log(`Servidor escutando em http://${HOST}: ${PORT}`)
 })
